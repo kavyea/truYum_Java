@@ -7,18 +7,18 @@ public class MenuItem {
 	private String name;
 	private float price;
 	private boolean active;
-	private Date dateofLaunch;
+	private Date dateOfLaunch;
 	private String category;
 	private boolean freeDelivery;
 
-	public MenuItem(long id, String name, float price, boolean active, Date dateofLaunch, String category,
+	public MenuItem(long id, String name, float price, boolean active, Date dateOfLaunch, String category,
 			boolean freeDelivery) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.active = active;
-		this.dateofLaunch = dateofLaunch;
+		this.dateOfLaunch = dateOfLaunch;
 		this.category = category;
 		this.freeDelivery = freeDelivery;
 	}
@@ -55,12 +55,12 @@ public class MenuItem {
 		this.active = active;
 	}
 
-	public Date getDateofLaunch() {
-		return dateofLaunch;
+	public Date getDateOfLaunch() {
+		return dateOfLaunch;
 	}
 
-	public void setDateofLaunch(Date dateofLaunch) {
-		this.dateofLaunch = dateofLaunch;
+	public void setDateOfLaunch(Date dateOfLaunch) {
+		this.dateOfLaunch = dateOfLaunch;
 	}
 
 	public String getCategory() {
@@ -81,16 +81,8 @@ public class MenuItem {
 
 	@Override
 	public String toString() {
-		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateofLaunch="
-				+ dateofLaunch + ", category=" + category + ", freeDelivery=" + freeDelivery + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
+		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateOfLaunch="
+				+ dateOfLaunch + ", category=" + category + ", freeDelivery=" + freeDelivery + "]";
 	}
 
 	@Override

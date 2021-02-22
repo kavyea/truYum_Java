@@ -43,7 +43,7 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 		List<MenuItem> menuItemList = new ArrayList<MenuItem>();
 		Date today = new Date();
 		for (MenuItem menuItem : menuItemList) {
-			if (menuItem.getDateofLaunch().getTime() <= today.getTime() && menuItem.isActive()) {
+			if (menuItem.getDateOfLaunch().getTime() <= today.getTime() && menuItem.isActive()) {
 				menuItemList.add(menuItem);
 			}
 		}
@@ -54,8 +54,8 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	@Override
 	public void modifyMenuItem(MenuItem menuItem) {
 		// TODO Auto-generated method stub
-		for(MenuItem value:menuItemList) {
-			if(value.getId() == menuItem.getId() || value.getName().equals(menuItem.getName())) {
+		for (MenuItem value : menuItemList) {
+			if (value.getId() == menuItem.getId() || value.getName().equals(menuItem.getName())) {
 				value = menuItem;
 			}
 		}
@@ -65,10 +65,10 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	@Override
 	public MenuItem getMenuItem(long menuItemId) {
 		// TODO Auto-generated method stub
-		MenuItem menuitem=null;
+		MenuItem menuitem = null;
 		for (MenuItem menuItem : menuItemList) {
 			if (menuItemId == menuItem.getId()) {
-				menuitem=menuItem;
+				menuitem = menuItem;
 
 			}
 		}

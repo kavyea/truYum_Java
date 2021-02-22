@@ -1,19 +1,19 @@
-
 package com.cognizant.truyum.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 
 import com.cognizant.truyum.model.Cart;
 import com.cognizant.truyum.model.MenuItem;
 
 public class CartDaoCollectionImpl implements CartDao {
 
-	private static HashMap<Long, Cart> userCarts;
+	private static Map<Long, Cart> userCarts;
 
 	public CartDaoCollectionImpl() {
-		super();
 		if (userCarts == null) {
 			userCarts = new HashMap<Long, Cart>();
 		}
@@ -37,7 +37,7 @@ public class CartDaoCollectionImpl implements CartDao {
 		// TODO Auto-generated method stub
 		Cart cart = userCarts.get(userId);
 		if (cart.getMenuItemList().isEmpty()) {
-			throw new CartEmptyException("List is Empty");
+			throw new CartEmptyException("");
 		} else {
 			for (MenuItem menuItemList : cart.getMenuItemList()) {
 				double total = cart.getTotal() + menuItemList.getPrice();
@@ -54,6 +54,7 @@ public class CartDaoCollectionImpl implements CartDao {
 		for (MenuItem menuItem : menuItemList) {
 			if (menuItem.getId() == menuItemId) {
 				menuItemList.remove(menuItem);
+				break;
 			}
 		}
 
